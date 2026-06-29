@@ -55,4 +55,141 @@
     </footer>
 
 </body>
-</html>
+</stley.css>
+/* Configurações Gerais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #f7f5f0; /* Fundo off-white relaxante */
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 10%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header .logo {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: #6e8b7e; /* Verde sálvia */
+}
+
+nav a {
+    text-decoration: none;
+    color: #555;
+    margin-left: 20px;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: #6e8b7e;
+}
+
+/* Banner */
+.banner {
+    background-color: #e3ece9; /* Tom suave de verde/azul */
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.banner h1 {
+    font-size: 2.5rem;
+    color: #4a5d54;
+    margin-bottom: 10px;
+}
+
+.banner p {
+    font-size: 1.1rem;
+    color: #777;
+}
+
+/* Grid de Conteúdo */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #4a5d54;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Cards do Blog */
+.card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-tag {
+    display: inline-block;
+    align-self: flex-start;
+    padding: 4px 10px;
+    font-size: 0.75rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+/* Cores das Tags */
+.mental { background-color: #e8def8; color: #534275; }
+.corpo { background-color: #e2f0d9; color: #3e6327; }
+.rotina { background-color: #fce8e6; color: #a53b32; }
+
+.card h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.btn-read {
+    text-decoration: none;
+    color: #6e8b7e;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: letter-spacing 0.3s;
+}
+
+.btn-read:hover {
+    letter-spacing: 1px;
+}
+
+/* Rodapé */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #4a5d54;
+    color: #ffffff;
+    margin-top: 40px;
+    font-size: 0.9rem;
+}
