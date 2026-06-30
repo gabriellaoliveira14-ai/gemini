@@ -1,195 +1,42 @@
-<!DOCTYPE html>
+
+}<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BioRotina | Blog de Autocuidado</title>
+    <title>Meu Blog de Autocuidado</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
-        <div class="logo">BioRotina</div>
-        <nav>
-            <a href="#">Início</a>
-            <a href="#">Dicas</a>
-            <a href="#">Sobre</a>
-        </nav>
+        <div class="container">
+            <h1>Mente & Corpo</h1>
+            <p>Seu espaço diário de autocuidado e bem-estar</p>
+        </div>
     </header>
 
-    <section class="banner">
-        <h1>Sua jornada de bem-estar começa aqui</h1>
-        <p>Pequenos hábitos diários transformam a sua saúde mental e física.</p>
-    </section>
-
     <main class="container">
-        <h2>O que você pode fazer hoje por você?</h2>
-        
-        <div class="blog-grid">
-            <article class="card">
-                <div class="card-tag mental">Mental</div>
-                <h3>A Pausa Necessária</h3>
-                <p>Pratique a meditação de 5 minutos ou o mindfulness logo pela manhã. Desectar-se das telas antes de dormir reduz a ansiedade de forma drástica.</p>
-                <a href="#" class="btn-read">Ler mais</a>
-            </article>
-
-            <article class="card">
-                <div class="card-tag corpo">Físico</div>
-                <h3>Movimente-se com Gentileza</h3>
-                <p>Autocuidado físico não é só exercício intenso. Alongue-se ao acordar, beba a quantidade ideal de água e escute os sinais de cansaço do seu corpo.</p>
-                <a href="#" class="btn-read">Ler mais</a>
-            </article>
-
-            <article class="card">
-                <div class="card-tag rotina">Rotina</div>
-                <h3>O Poder do 'Não'</h3>
-                <p>Estabelecer limites é uma das maiores demonstrações de amor-próprio. Organize sua agenda deixando blocos de tempo livres para não fazer nada.</p>
-                <a href="#" class="btn-read">Ler mais</a>
-            </article>
-        </div>
+        <article class="post">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=1200&q=80" alt="Pessoa meditando na praia" class="post-img">
+            
+            <div class="post-content">
+                <span class="category">Mental</span>
+                <h2>5 Minutos de Atenção Plena: Como Começar Hoje</h2>
+                <p class="post-date">Postado em 30 de Junho de 2026</p>
+                
+                <p>No ritmo acelerado do dia a dia, encontrar um momento para si mesmo pode parecer um desafio impossível. No entanto, o autocuidado não precisa exigir horas do seu dia. Apenas cinco minutos de pausa consciente podem transformar a sua saúde mental.</p>
+                
+                <p>Comece sentando-se em uma posição confortável, feche os olhos e foque exclusivamente na sua respiração. Quando sua mente começar a divagar (e ela vai), gentilmente traga a sua atenção de volta para o ar que entra e sai.</p>
+                
+                <a href="#" class="read-more">Ler mais</a>
+            </div>
+        </article>
     </main>
 
     <footer>
-        <p>&copy; 2026 BioRotina. Feito para inspirar uma vida mais leve.</p>
+        <p>&copy; 2026 Mente & Corpo. Feito com carinho para o seu bem-estar.</p>
     </footer>
 
 </body>
-</stley.css>
-/* Configurações Gerais */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #f7f5f0; /* Fundo off-white relaxante */
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Cabeçalho */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px 10%;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-}
-
-header .logo {
-    font-weight: 600;
-    font-size: 1.5rem;
-    color: #6e8b7e; /* Verde sálvia */
-}
-
-nav a {
-    text-decoration: none;
-    color: #555;
-    margin-left: 20px;
-    transition: color 0.3s;
-}
-
-nav a:hover {
-    color: #6e8b7e;
-}
-
-/* Banner */
-.banner {
-    background-color: #e3ece9; /* Tom suave de verde/azul */
-    text-align: center;
-    padding: 60px 20px;
-}
-
-.banner h1 {
-    font-size: 2.5rem;
-    color: #4a5d54;
-    margin-bottom: 10px;
-}
-
-.banner p {
-    font-size: 1.1rem;
-    color: #777;
-}
-
-/* Grid de Conteúdo */
-.container {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 0 20px;
-}
-
-.container h2 {
-    text-align: center;
-    margin-bottom: 30px;
-    color: #4a5d54;
-}
-
-.blog-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* Cards do Blog */
-.card {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
-
-.card-tag {
-    display: inline-block;
-    align-self: flex-start;
-    padding: 4px 10px;
-    font-size: 0.75rem;
-    border-radius: 4px;
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 15px;
-}
-
-/* Cores das Tags */
-.mental { background-color: #e8def8; color: #534275; }
-.corpo { background-color: #e2f0d9; color: #3e6327; }
-.rotina { background-color: #fce8e6; color: #a53b32; }
-
-.card h3 {
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card p {
-    font-size: 0.95rem;
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.btn-read {
-    text-decoration: none;
-    color: #6e8b7e;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: letter-spacing 0.3s;
-}
-
-.btn-read:hover {
-    letter-spacing: 1px;
-}
-
-/* Rodapé */
-footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #4a5d54;
-    color: #ffffff;
-    margin-top: 40px;
-    font-size: 0.9rem;
-}
+</html>
