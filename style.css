@@ -1,6 +1,6 @@
 header {
-    background-color: #183C63;
-    color: #FFFFFF;
+    background-color: #354f6b;
+    color: #5c347c;
     text-align: center;
     max-width: 800px;
     margin: 0 auto;
@@ -8,8 +8,8 @@ header {
 }
 
 main {
-    background-color: #FFFFFF;
-    color: #183C63;
+    background-color: #513369;
+    color: #30475f;
     max-width: 800px;
     margin: 0 auto;
     padding: 16px;
