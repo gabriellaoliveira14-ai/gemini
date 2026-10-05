@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arte inspirada em Van Gogh</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      overflow: hidden;
+      background: #07152f;
+      font-family: Arial, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100vw;
+      height: 100vh;
+    }
+
+    .titulo {
+      position: fixed;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 28px;
+      font-weight: bold;
+      text-shadow: 2px 2px 5px #000;
+      z-index: 2;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="titulo">🌙 Noite Estrelada — estilo Van Gogh</div>
+
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const canvas = document.getElementById("canvas");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const largura = canvas.width;
+    const altura = canvas.height;
+
+    // Céu
+    const gradiente = ctx.createLinearGradient(0, 0, 0, altura);
+
+    gradiente.addColorStop(0, "#061b4f");
+    gradiente.addColorStop(0.5, "#123f80");
+    gradiente.addColorStop(1, "#0b1d38");
+
+    ctx.fillStyle = gradiente;
+    ctx.fillRect(0, 0, largura, altura);
+
+    // Lua
+    ctx.beginPath();
+    ctx.arc(largura * 0.78, altura * 0.22, 55, 0, Math.PI * 2);
+    ctx.fillStyle = "#ffd84d";
+    ctx.fill();
+
+    // Brilho da lua
+    ctx.beginPath();
+    ctx.arc(largura * 0.78, altura * 0.22, 75, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(255, 216, 77, 0.3)";
+    ctx.lineWidth = 15;
+    ctx.stroke();
+
+    // Estrelas
+    function estrela(x, y, tamanho) {
+      ctx.beginPath();
+
+      for (let i = 0; i < 10; i++) {
+        const angulo = (Math.PI * 2 / 10) * i;
+        const raio = i % 2 === 0 ? tamanho : tamanho / 2;
+
+        const px = x + Math.cos(angulo) * raio;
+        const py = y + Math.sin(angulo) * raio;
+
+        if (i === 0) {
+          ctx.moveTo(px, py);
+        } else {
+          ctx.lineTo(px, py);
+        }
+      }
+
+      ctx.closePath();
+      ctx.fillStyle = "#ffe66d";
+      ctx.fill();
+    }
+
+    for (let i = 0; i < 18; i++) {
+      const x = Math.random() * largura;
+      const y = Math.random() * altura * 0.55;
+
+      estrela(x, y, 8 + Math.random() * 10);
+    }
+
+    // Pinceladas circulares no céu
+    function pincelada(x, y, raio, cor, inicio, fim) {
+      ctx.beginPath();
+
+      ctx.arc(
+        x,
+        y,
+        raio,
+        inicio,
+        fim
+      );
+
+      ctx.strokeStyle = cor;
+      ctx.lineWidth = 7;
+      ctx.lineCap = "round";
+      ctx.stroke();
+    }
+
+    for (let i = 0; i < 70; i++) {
+      const x = Math.random() * largura;
+      const y = Math.random() * altura * 0.65;
+      const raio = 15 + Math.random() * 45;
+
+      const cores = [
+        "#1d5fa7",
+        "#2778bd",
+        "#4a91c7",
+        "#f4c542",
+        "#e9a928"
+      ];
+
+      const cor = cores[Math.floor(Math.random() * cores.length)];
+
+      pincelada(
+        x,
+        y,
+        raio,
+        cor,
+        Math.random() * Math.PI,
+        Math.PI + Math.random() * Math.PI
+      );
+    }
+
+    // Montanhas
+    ctx.beginPath();
+    ctx.moveTo(0, altura * 0.72);
+
+    for (let x = 0; x <= largura; x += 100) {
+      const y = altura * 0.68 - Math.random() * 100;
+      ctx.lineTo(x, y);
+    }
+
+    ctx.lineTo(largura, altura);
+    ctx.lineTo(0, altura);
+    ctx.closePath();
+
+    ctx.fillStyle = "#102d46";
+    ctx.fill();
+
+    // Cidade
+    for (let x = 0; x < largura; x += 45) {
+      const h = 40 + Math.random() * 100;
+
+      ctx.fillStyle = "#172b38";
+      ctx.fillRect(x, altura * 0.78 - h, 35, h);
+
+      // Janelas
+      for (let y = altura * 0.8 - h; y < altura * 0.78; y += 20) {
+        ctx.fillStyle = "#f6d75b";
+        ctx.fillRect(x + 10, y, 6, 8);
+      }
+    }
+
+    // Grande cipreste
+    ctx.fillStyle = "#071b20";
+
+    ctx.beginPath();
+    ctx.moveTo(largura * 0.13, altura);
+    ctx.quadraticCurveTo(
+      largura * 0.05,
+      altura * 0.55,
+      largura * 0.17,
+      altura * 0.28
+    );
+
+    ctx.quadraticCurveTo(
+      largura * 0.24,
+      altura * 0.55,
+      largura * 0.21,
+      altura
+    );
+
+    ctx.closePath();
+    ctx.fill();
+
+    // Pequenas pinceladas no chão
+    for (let i = 0; i < 80; i++) {
+      const x = Math.random() * largura;
+      const y = altura * 0.75 + Math.random() * altura * 0.25;
+
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+
+      ctx.lineTo(x + 20, y - 5);
+
+      ctx.strokeStyle = i % 2 === 0
+        ? "#31566b"
+        : "#426f73";
+
+      ctx.lineWidth = 4;
+      ctx.stroke();
+    }
+
+    // Redimensionar a tela
+    window.addEventListener("resize", () => {
+      location.reload();
+    });
+  </script>
+
+</body>
+</html>
